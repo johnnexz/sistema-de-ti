@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>suporteticesman.com.br | Sistema de Chamados T.I.</title>
+  <link rel="canonical" href="https://suporteticesman.com.br/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <section id="introScreen" class="intro-screen">
+      <div class="intro-card">
+        <div class="intro-headline">
+          <div>
+            <p class="eyebrow">Central de Suporte</p>
+            <h1>CESMAN</h1>
+          </div>
+          <span class="intro-pill">T.I.</span>
+      </div>
+
+        <div class="cesman-tiles">
+          <span class="cesman-letter">C</span>
+          <span class="cesman-letter">E</span>
+          <span class="cesman-letter">S</span>
+          <span class="cesman-letter">M</span>
+          <span class="cesman-letter">A</span>
+          <span class="cesman-letter">N</span>
+        </div>
+
+        <div class="intro-actions">
+          <button id="enterAppBtn" class="btn btn-primary btn-large">Abrir Chamado</button>
+          <button id="introSaluxBtn" class="btn btn-secondary btn-large btn-salux">Salux</button>
+        </div>
+
+        <div class="info-row">
+          <span>Atendimento T.I. moderno e ágil</span>
+          <span>Sua solicitação é tratada com prioridade</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="appShell" class="app-shell hidden">
+      <div class="topbar">
+        <button id="openTicketSection" class="tab-button active">Abrir Chamado</button>
+        <button id="openDashboardBtn" class="tab-button" type="button" onclick="window.location.href='dasboard.html'">Dashboard</button>
+        <button id="openSaluxBtn" class="tab-button">Salux</button>
+      </div>
+
+      <header class="hero-card">
+        <div>
+          <p class="eyebrow">Chamados T.I.</p>
+          <h1>Abra um chamado rápido e moderno</h1>
+          <p>Gerencie solicitações de suporte, acompanhe o status e mantenha sua equipe organizada.</p>
+        </div>
+        <div class="hero-actions">
+          <span class="stats">
+            <strong id="totalTickets">0</strong>
+            <small>Chamados abertos</small>
+          </span>
+          <span class="stats">
+            <strong id="resolvedTickets">0</strong>
+            <small>Resolvidos</small>
+          </span>
+        </div>
+      </header>
+
+      <section id="ticketSection" class="layout">
+        <div class="panel panel-form">
+          <div class="panel-header">
+            <h2>Novo Chamado</h2>
+            <p>Registre seu chamado e acompanhe o status até a solução.</p>
+          </div>
+
+          <form id="ticketForm" class="form-card">
+            <label>
+              Nome
+              <input id="inputName" type="text" placeholder="Seu nome" required />
+            </label>
+
+            <label>
+              Setor
+              <select id="inputDepartment" required>
+                <option value="">Escolha um setor</option>
+                <option value="Consultorio 1">Consultório 1</option>
+                <option value="RH">RH</option>
+                <option value="Consultorio 2">Consultório 2</option>
+                <option value="uib">uib</option>
+                <option value="Recepção">Recepção</option>
+                <option value="Observação">Observação</option>
+                <option value="Direção">Direção</option>
+              </select>
+            </label>
+
+            <label>
+              Prioridade
+              <select id="inputPriority" required>
+                <option value="Baixa">Baixa</option>
+                <option value="Média">Média</option>
+                <option value="Alta">Alta</option>
+              </select>
+            </label>
+
+            <label>
+              Tipo de solicitação
+              <input id="inputTitle" type="text" placeholder="Ex: Problema no computador" required />
+            </label>
+
+            <label>
+              Descrição
+              <textarea id="inputDescription" rows="4" placeholder="Descreva o problema..." required></textarea>
+            </label>
+
+            <button type="submit" class="btn btn-primary">Abrir chamado</button>
+          </form>
+        </div>
+
+        <div class="panel panel-list">
+          <div class="panel-header">
+            <h2>Chamados</h2>
+            <p>Lista de solicitações registradas.</p>
+          </div>
+
+          <div id="ticketList" class="ticket-grid">
+            <p class="empty-state">Nenhum chamado registrado. Abra um novo chamado agora.</p>
+          </div>
+        </div>
+      </section>
+
+    </section>
+
+    <div id="saluxModal" class="modal-overlay hidden">
+      <div class="modal">
+        <h2>Atenção Salux</h2>
+        <p>Serviços de Salux são somente para desbloqueio de senha e redefinir senha.</p>
+        <div class="modal-actions">
+          <button id="modalCancelBtn" class="btn btn-secondary">Cancelar</button>
+          <button id="modalConfirmBtn" class="btn btn-primary">Ir para WhatsApp</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

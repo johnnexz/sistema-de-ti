@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard ADM | suporteticesman.com.br</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="intro-screen">
+      <div class="intro-card">
+        <div class="intro-headline">
+          <div>
+            <p class="eyebrow">Painel ADM</p>
+            <h1>Dashboard CESMAN</h1>
+          </div>
+          <span class="intro-pill">Apenas ADM</span>
+        </div>
+
+        <div id="loginSection" class="dashboard-login">
+          <p>Faça login como administrador para acompanhar as solicitações.</p>
+          <form id="adminLoginForm" class="login-form">
+            <label>
+              Usuário
+              <input id="adminUser" type="text" placeholder="adm" required />
+            </label>
+            <label>
+              Senha
+              <input id="adminPass" type="password" placeholder="johnnes 12" required />
+            </label>
+            <p id="adminLoginError" class="login-error hidden">Usuário ou senha inválidos.</p>
+            <div class="modal-actions">
+              <button type="button" id="backBtn" class="btn btn-secondary">Voltar</button>
+              <button type="submit" class="btn btn-primary">Entrar</button>
+            </div>
+          </form>
+        </div>
+
+        <div id="dashboardSection" class="dashboard-section hidden">
+          <div class="panel panel-dashboard">
+            <div class="panel-header">
+              <h2>Dashboard do Técnico</h2>
+              <p>Acompanhe seus chamados em tempo real e gerencie os registros.</p>
+              <span class="badge badge-dashboard">Só para mim</span>
+            </div>
+            <div class="dashboard-widgets">''
+              <div class="dashboard-card">
+                <strong id="dashboardTotal">0</strong>
+                <span>Total de chamados</span>
+              </div>
+              <div class="dashboard-card">
+                <strong id="dashboardOpen">0</strong>
+                <span>Abertos</span>
+              </div>
+              <div class="dashboard-card">
+                <strong id="dashboardClosed">0</strong>
+                <span>Fechados</span>
+              </div>
+            </div>
+            <div class="panel-header" style="margin-bottom: 0;">
+              <h2>Chamados</h2>
+              <button id="logoutBtn" class="btn btn-secondary">Sair</button>
+            </div>
+            <div id="dashboardTicketList" class="ticket-grid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="dasboard.js"></script>
+</body>
+</html>
